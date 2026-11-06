@@ -1,6 +1,15 @@
 # 默认忽略的文件
 /shelf/
 /workspace.xml
+# PyCharm / JetBrains
+.idea/
+*.iml
+*.iws
+
+# Python 运行时生成文件
+__pycache__/
+*.py[cod]
+*$py.class
 # 基于编辑器的 HTTP 客户端请求
 /httpRequests/
 # Datasource local storage ignored files
