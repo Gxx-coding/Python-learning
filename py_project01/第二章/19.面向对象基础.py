@@ -13,7 +13,10 @@
 
 # 定义类
 class Car:
-    def __init__(self,c_brand,c_name,c_price):
+    # 类属性：所有实例对象共享
+    wheel=4
+    tax_rate=0.1 #税率
+    def __init__(self,c_brand,c_name,c_price): #实例属性
         self.brand=c_brand
         self.name=c_name
         self.price=c_price
@@ -41,8 +44,15 @@ class Car:
 # 实例化对象
 c2=Car("BMW","X5",500000)
 print(c2.__dict__)
+print(c2.brand)
+print(c2.wheel)#通过实例对象访问属性时，会先访问实例属性，在访问类属性
 c2.running()
+# 通过类名访问
+print(Car.wheel)
+print()
 print(f"{c2.brand}{c2.name}的价格为{c2.total_cost(0.7,0.1):.1f}元")
+
+
 
 c3=Car("BMW","X5",600000)
 print(c3)
