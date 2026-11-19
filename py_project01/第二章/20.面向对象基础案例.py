@@ -104,6 +104,7 @@ class EduManagement:
 
     def menu(self):
         while True:
+
             print("\n===== 教务管理系统 =====")
             print("1. 添加学生成绩")
             print("2. 修改学生成绩")
@@ -112,21 +113,26 @@ class EduManagement:
             print("5. 展示全部学生成绩")
             print("0. 退出系统")
             choice = input("请输入功能编号：")
-            if choice == "1":
-                self.add_student()
-            elif choice == "2":
-                self.change_student()
-            elif choice == "3":
-                self.delete_student()
-            elif choice == "4":
-                self.find_student()
-            elif choice == "5":
-                self.show_all()
-            elif choice == "0":
-                print("退出系统，再见！")
-                break
-            else:
-                print("输入编号无效，请重新选择！")
+            try:
+                if choice == "1":
+                    self.add_student()
+                elif choice == "2":
+                    self.change_student()
+                elif choice == "3":
+                    self.delete_student()
+                elif choice == "4":
+                    self.find_student()
+                elif choice == "5":
+                    self.show_all()
+                elif choice == "0":
+                    print("退出系统，再见！")
+                    break
+                else:
+                    print("输入编号无效，请重新选择！")
+            except ValueError as e:
+                print("输入的数据有问题，请确认数据类型，然后重新输入")
+            except Exception as e:
+                print("程序运行出错了，请重新选择！")
 
 
 
